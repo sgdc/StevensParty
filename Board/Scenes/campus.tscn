@@ -1,0 +1,2530 @@
+[gd_scene load_steps=38 format=3 uid="uid://djgjq8uvcbdku"]
+
+[ext_resource type="Script" uid="uid://blnaxqvaocruu" path="res://Board/Scripts/board.gd" id="1_pulhn"]
+[ext_resource type="Texture2D" uid="uid://bmnawctktbo5t" path="res://Board/Assets/satalightbig.png" id="2_pvgyi"]
+[ext_resource type="Texture2D" uid="uid://fk42f75i5d46" path="res://Board/Assets/satalight.png" id="3_35f5b"]
+[ext_resource type="Texture2D" uid="uid://egou3eck5t1p" path="res://Board/Assets/path.png" id="4_t7on0"]
+[ext_resource type="Texture2D" uid="uid://dtt0pf651emdy" path="res://Board/Assets/arrow.png" id="5_j8nnf"]
+[ext_resource type="Texture2D" uid="uid://dymhs4eb44dsg" path="res://Board/Assets/bluespace.png" id="6_2f74l"]
+[ext_resource type="Script" uid="uid://bc1okcninehea" path="res://Board/Scripts/boardcamera.gd" id="7_l7hd3"]
+[ext_resource type="Texture2D" uid="uid://di7i2j835ld8g" path="res://MiscAssets/Players/Icons/Hunter.png" id="8_55kwb"]
+[ext_resource type="Texture2D" uid="uid://bb7dak3ra018a" path="res://Board/Assets/Icons/attila.png" id="9_dgm7q"]
+[ext_resource type="FontFile" uid="uid://0ru55rka61tc" path="res://MiscAssets/Fonts/HanleyPro-Sans.ttf" id="10_co7o2"]
+[ext_resource type="Texture2D" uid="uid://dsfoktobd7vm8" path="res://Board/Assets/Icons/credits.png" id="11_5ciuo"]
+[ext_resource type="PackedScene" uid="uid://d4fs2a82ivfa8" path="res://Board/Scenes/items.tscn" id="12_8l5hm"]
+[ext_resource type="Texture2D" uid="uid://dsxnrlhbhjbdg" path="res://Board/Assets/playerborder.png" id="13_jxy4i"]
+[ext_resource type="Texture2D" uid="uid://dd1acsjtucxkm" path="res://MiscAssets/Players/Icons/Watch.png" id="14_v50s8"]
+[ext_resource type="Texture2D" uid="uid://dtdydacm7y6p5" path="res://MiscAssets/Players/Icons/Thief.png" id="15_yhyih"]
+[ext_resource type="Texture2D" uid="uid://byg8x5rwo432u" path="res://Board/Assets/laptop.png" id="16_rjo2y"]
+[ext_resource type="Texture2D" uid="uid://baludgtdefkc1" path="res://MiscAssets/ControllerIcons/xbox_button_color_y_filled.png" id="17_0dgxm"]
+[ext_resource type="Texture2D" uid="uid://cpqx72vibvtv0" path="res://MiscAssets/ControllerIcons/xbox_button_color_x_filled.png" id="18_uiujr"]
+[ext_resource type="Texture2D" uid="uid://dflbe3lgg1hwy" path="res://MiscAssets/ControllerIcons/xbox_button_color_a_outline.png" id="19_8j5jc"]
+[ext_resource type="Texture2D" uid="uid://dxadlf77b28sf" path="res://MiscAssets/ControllerIcons/xbox_button_color_x_outline.png" id="20_k37av"]
+[ext_resource type="Texture2D" uid="uid://e0wnlpvfba52" path="res://MiscAssets/ControllerIcons/xbox_button_color_y_outline.png" id="21_71w4q"]
+[ext_resource type="Texture2D" uid="uid://c1wbthecdttun" path="res://MiscAssets/ControllerIcons/xbox_button_color_b_outline.png" id="22_1ugnq"]
+[ext_resource type="Texture2D" uid="uid://c1pmeu8dx0w7h" path="res://Board/Assets/Icons/zzz.png" id="23_3w2by"]
+[ext_resource type="Texture2D" uid="uid://dr32ml826iugg" path="res://Board/Assets/Icons/aca.png" id="24_m1lrr"]
+[ext_resource type="Texture2D" uid="uid://gd1ti3nip226" path="res://Board/Assets/Icons/CAPS.png" id="25_qnmkl"]
+[ext_resource type="Texture2D" uid="uid://c66gkeku8svtv" path="res://Board/Assets/Icons/van.png" id="26_hc40r"]
+[ext_resource type="Texture2D" uid="uid://dvhrko8psc6ex" path="res://Board/Assets/Icons/admission.png" id="27_1bl1v"]
+[ext_resource type="Texture2D" uid="uid://bm4kuja82dn38" path="res://Board/Assets/Icons/sport.png" id="28_r5216"]
+[ext_resource type="Texture2D" uid="uid://bc26bjxfrf1ng" path="res://Board/Assets/Icons/library.png" id="29_0lrhs"]
+[ext_resource type="Texture2D" uid="uid://s4w55dbqu1nr" path="res://Board/Assets/Icons/shop.png" id="30_5een3"]
+[ext_resource type="Texture2D" uid="uid://dg365hgnypgcd" path="res://Board/Assets/Icons/Hoxie.png" id="31_pmjtb"]
+[ext_resource type="PackedScene" uid="uid://dek3uldhj0fls" path="res://Board/Scenes/players.tscn" id="32_6knch"]
+
+[sub_resource type="Animation" id="Animation_whnap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/CanvasLayer/Black:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/CanvasLayer/TurnLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_75fy0"]
+resource_name = "fade_in"
+length = 6.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/CanvasLayer/Black:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/CanvasLayer/TurnLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 2.2, 4.3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_turn"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_c2ako"]
+resource_name = "fade_in_simple"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/CanvasLayer/Black:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a4ncf"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/CanvasLayer/Black:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ge5qr"]
+_data = {
+&"RESET": SubResource("Animation_whnap"),
+&"fade_in": SubResource("Animation_75fy0"),
+&"fade_in_simple": SubResource("Animation_c2ako"),
+&"fade_out": SubResource("Animation_a4ncf")
+}
+
+[node name="Campus" type="Node2D"]
+script = ExtResource("1_pulhn")
+
+[node name="AP" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ge5qr")
+}
+
+[node name="Number_Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="SatalightBig" type="TextureRect" parent="Background"]
+offset_left = -2155.0
+offset_top = -1248.0
+offset_right = 439.0
+offset_bottom = 456.0
+scale = Vector2(3.96, 4.005)
+texture = ExtResource("2_pvgyi")
+
+[node name="Satalight" type="TextureRect" parent="Background"]
+offset_right = 1920.0
+offset_bottom = 1047.0
+scale = Vector2(3, 3)
+texture = ExtResource("3_35f5b")
+
+[node name="Border1" type="ColorRect" parent="Background"]
+offset_left = -2227.0
+offset_top = -1257.0
+offset_right = 8210.0
+offset_bottom = -351.0
+color = Color(0, 0, 0, 1)
+
+[node name="Border2" type="ColorRect" parent="Background"]
+offset_left = 6837.0
+offset_top = -1257.0
+offset_right = 8210.0
+offset_bottom = 5584.0
+color = Color(0, 0, 0, 1)
+
+[node name="Border3" type="ColorRect" parent="Background"]
+offset_left = -2227.0
+offset_top = 3698.0
+offset_right = 8210.0
+offset_bottom = 5595.0
+color = Color(0, 0, 0, 1)
+
+[node name="Border4" type="ColorRect" parent="Background"]
+offset_left = -2424.0
+offset_top = -1257.0
+offset_right = -1051.0
+offset_bottom = 5584.0
+color = Color(0, 0, 0, 1)
+
+[node name="Path" type="TextureRect" parent="."]
+offset_left = 164.0
+offset_top = 462.0
+offset_right = 5647.0
+offset_bottom = 3034.0
+texture = ExtResource("4_t7on0")
+
+[node name="ColorRect1" type="ColorRect" parent="Path"]
+layout_mode = 0
+offset_left = 3747.0
+offset_top = 1764.0
+offset_right = 4163.0
+offset_bottom = 1780.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Path"]
+layout_mode = 0
+offset_left = 1795.0
+offset_top = 103.0
+offset_right = 1946.0
+offset_bottom = 123.0
+rotation = -0.987812
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Path"]
+layout_mode = 0
+offset_left = 1812.0
+offset_top = 1497.0
+offset_right = 2122.0
+offset_bottom = 1517.0
+rotation = -0.740321
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Path"]
+layout_mode = 0
+offset_left = 1801.0
+offset_top = 2288.0
+offset_right = 2593.0
+offset_bottom = 2308.0
+rotation = -1.55388
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Path"]
+layout_mode = 0
+offset_left = 1801.0
+offset_top = 2288.0
+offset_right = 3402.0
+offset_bottom = 2308.0
+rotation = -0.136768
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Path"]
+layout_mode = 0
+offset_left = 3372.0
+offset_top = 2090.0
+offset_right = 3572.0
+offset_bottom = 2110.0
+rotation = -1.55388
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="Path"]
+layout_mode = 0
+offset_left = 3374.0
+offset_top = 1888.0
+offset_right = 3769.0
+offset_bottom = 1908.0
+rotation = -0.296683
+color = Color(0, 0, 0, 1)
+
+[node name="A1" type="Sprite2D" parent="Path"]
+position = Vector2(167, 296)
+rotation = -0.734555
+scale = Vector2(0.469372, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A2" type="Sprite2D" parent="Path"]
+position = Vector2(374, 1041)
+rotation = -2.85146
+scale = Vector2(0.469372, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A3" type="Sprite2D" parent="Path"]
+position = Vector2(1201, 1257)
+rotation = -2.85146
+scale = Vector2(0.469372, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A4" type="Sprite2D" parent="Path"]
+position = Vector2(2432, 1457)
+rotation = -3.17781
+scale = Vector2(0.469372, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A21" type="Sprite2D" parent="Path"]
+position = Vector2(2044.17, 1574.04)
+rotation = -1.59808
+scale = Vector2(0.385815, 0.447791)
+texture = ExtResource("5_j8nnf")
+
+[node name="A5" type="Sprite2D" parent="Path"]
+position = Vector2(3427, 1386)
+rotation = -3.17781
+scale = Vector2(0.469372, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A6" type="Sprite2D" parent="Path"]
+position = Vector2(4309.02, 1379.73)
+rotation = -4.71161
+scale = Vector2(0.277921, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A7" type="Sprite2D" parent="Path"]
+position = Vector2(4784, 1604)
+rotation = -6.29519
+scale = Vector2(0.448283, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A22" type="Sprite2D" parent="Path"]
+position = Vector2(3863, 1626)
+rotation = -9.42507
+scale = Vector2(0.32931, 0.364814)
+texture = ExtResource("5_j8nnf")
+
+[node name="A8" type="Sprite2D" parent="Path"]
+position = Vector2(4800, 2424)
+rotation = -3.16416
+scale = Vector2(0.448283, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A9" type="Sprite2D" parent="Path"]
+position = Vector2(2795.98, 1790.13)
+rotation = -3.16416
+scale = Vector2(1.49191, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A10" type="Sprite2D" parent="Path"]
+position = Vector2(2150, 753)
+rotation = -0.248119
+scale = Vector2(0.448283, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A11" type="Sprite2D" parent="Path"]
+position = Vector2(1199, -77)
+rotation = 0.192662
+scale = Vector2(0.448283, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A12" type="Sprite2D" parent="Path"]
+position = Vector2(2267, 107)
+rotation = 0.493987
+scale = Vector2(0.448283, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A13" type="Sprite2D" parent="Path"]
+position = Vector2(3641, 804)
+rotation = 0.493987
+scale = Vector2(0.448283, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A14" type="Sprite2D" parent="Path"]
+position = Vector2(847, 600)
+rotation = -1.13956
+scale = Vector2(0.448283, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A15" type="Sprite2D" parent="Path"]
+position = Vector2(1391, 414)
+rotation = 1.65289
+scale = Vector2(0.448283, 0.452463)
+texture = ExtResource("5_j8nnf")
+
+[node name="A16" type="Sprite2D" parent="Path"]
+position = Vector2(1031, 771)
+rotation = 1.95393
+scale = Vector2(0.196917, 0.308834)
+texture = ExtResource("5_j8nnf")
+
+[node name="A17" type="Sprite2D" parent="Path"]
+position = Vector2(1516, 778)
+rotation = 0.74242
+scale = Vector2(0.196917, 0.308834)
+texture = ExtResource("5_j8nnf")
+
+[node name="A20" type="Sprite2D" parent="Path"]
+position = Vector2(1672, 1043)
+rotation = 4.56524
+scale = Vector2(0.115563, 0.199197)
+texture = ExtResource("5_j8nnf")
+
+[node name="A18" type="Sprite2D" parent="Path"]
+position = Vector2(1387, 996)
+rotation = -2.14573
+scale = Vector2(0.196917, 0.308834)
+texture = ExtResource("5_j8nnf")
+
+[node name="A19" type="Sprite2D" parent="Path"]
+position = Vector2(3404, 1039)
+rotation = -4.66509
+scale = Vector2(0.196917, 0.308834)
+texture = ExtResource("5_j8nnf")
+
+[node name="H1" type="Sprite2D" parent="Path"]
+position = Vector2(3404, 1039)
+rotation = 1.6181
+scale = Vector2(0.196917, 0.308834)
+texture = ExtResource("5_j8nnf")
+
+[node name="startspace" type="TextureRect" parent="Path"]
+modulate = Color(0.396102, 0.145296, 0, 1)
+layout_mode = 0
+offset_left = 1656.0
+offset_top = -296.0
+offset_right = 2156.0
+offset_bottom = 204.0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(2858, 1620)
+zoom = Vector2(0.34, 0.34)
+limit_left = -1050
+limit_top = -350
+limit_right = 6835
+limit_bottom = 3696
+script = ExtResource("7_l7hd3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera"]
+
+[node name="prec1" type="ColorRect" parent="Camera/CanvasLayer"]
+offset_left = 33.0
+offset_top = 24.0
+offset_right = 433.0
+offset_bottom = 224.0
+color = Color(0, 0.262745, 1, 0.784314)
+
+[node name="picon1" type="Sprite2D" parent="Camera/CanvasLayer/prec1"]
+position = Vector2(100, 101)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_55kwb")
+
+[node name="coinsicon1" type="Sprite2D" parent="Camera/CanvasLayer/prec1"]
+position = Vector2(239, 113.6)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_dgm7q")
+
+[node name="coinslabel1" type="Label" parent="Camera/CanvasLayer/prec1"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 88.6
+offset_right = 396.0
+offset_bottom = 139.6
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "$17"
+
+[node name="staricon1" type="Sprite2D" parent="Camera/CanvasLayer/prec1"]
+position = Vector2(251, 42.6)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("11_5ciuo")
+
+[node name="starlabel1" type="Label" parent="Camera/CanvasLayer/prec1"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 28.0
+offset_right = 416.0
+offset_bottom = 79.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "0"
+
+[node name="Items1" type="Node2D" parent="Camera/CanvasLayer/prec1"]
+
+[node name="I11" parent="Camera/CanvasLayer/prec1/Items1" instance=ExtResource("12_8l5hm")]
+position = Vector2(230, 171)
+scale = Vector2(2, 2)
+
+[node name="I12" parent="Camera/CanvasLayer/prec1/Items1" instance=ExtResource("12_8l5hm")]
+position = Vector2(290, 171)
+scale = Vector2(2, 2)
+
+[node name="I13" parent="Camera/CanvasLayer/prec1/Items1" instance=ExtResource("12_8l5hm")]
+position = Vector2(350, 171)
+scale = Vector2(2, 2)
+
+[node name="Border1" type="Sprite2D" parent="Camera/CanvasLayer/prec1"]
+visible = false
+position = Vector2(200, 100)
+texture = ExtResource("13_jxy4i")
+
+[node name="prec2" type="ColorRect" parent="Camera/CanvasLayer"]
+offset_left = 1478.0
+offset_top = 24.0
+offset_right = 1878.0
+offset_bottom = 224.0
+color = Color(0.529412, 0.0862745, 0, 0.784314)
+
+[node name="picon2" type="Sprite2D" parent="Camera/CanvasLayer/prec2"]
+position = Vector2(101, 101)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_v50s8")
+
+[node name="coinsicon2" type="Sprite2D" parent="Camera/CanvasLayer/prec2"]
+position = Vector2(239, 113.6)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_dgm7q")
+
+[node name="coinslabel2" type="Label" parent="Camera/CanvasLayer/prec2"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 88.6
+offset_right = 396.0
+offset_bottom = 139.6
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "$24"
+
+[node name="staricon2" type="Sprite2D" parent="Camera/CanvasLayer/prec2"]
+position = Vector2(251, 42.6)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("11_5ciuo")
+
+[node name="starlabel2" type="Label" parent="Camera/CanvasLayer/prec2"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 28.0
+offset_right = 416.0
+offset_bottom = 79.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "0"
+
+[node name="Items2" type="Node2D" parent="Camera/CanvasLayer/prec2"]
+
+[node name="I21" parent="Camera/CanvasLayer/prec2/Items2" instance=ExtResource("12_8l5hm")]
+position = Vector2(230, 171)
+scale = Vector2(2, 2)
+
+[node name="I22" parent="Camera/CanvasLayer/prec2/Items2" instance=ExtResource("12_8l5hm")]
+position = Vector2(290, 171)
+scale = Vector2(2, 2)
+
+[node name="I23" parent="Camera/CanvasLayer/prec2/Items2" instance=ExtResource("12_8l5hm")]
+position = Vector2(350, 171)
+scale = Vector2(2, 2)
+
+[node name="Border2" type="Sprite2D" parent="Camera/CanvasLayer/prec2"]
+visible = false
+position = Vector2(200, 100)
+texture = ExtResource("13_jxy4i")
+
+[node name="prec3" type="ColorRect" parent="Camera/CanvasLayer"]
+offset_left = 33.0
+offset_top = 852.0
+offset_right = 433.0
+offset_bottom = 1052.0
+color = Color(0, 0.419608, 0.0745098, 0.784314)
+
+[node name="picon3" type="Sprite2D" parent="Camera/CanvasLayer/prec3"]
+position = Vector2(100, 101)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_yhyih")
+
+[node name="coinsicon3" type="Sprite2D" parent="Camera/CanvasLayer/prec3"]
+position = Vector2(239, 111.2)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_dgm7q")
+
+[node name="coinslabel3" type="Label" parent="Camera/CanvasLayer/prec3"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 86.2
+offset_right = 396.0
+offset_bottom = 137.2
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "$38"
+
+[node name="staricon3" type="Sprite2D" parent="Camera/CanvasLayer/prec3"]
+position = Vector2(251, 40.2)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("11_5ciuo")
+
+[node name="starlabel3" type="Label" parent="Camera/CanvasLayer/prec3"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 25.6
+offset_right = 416.0
+offset_bottom = 76.6
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "88"
+
+[node name="Items3" type="Node2D" parent="Camera/CanvasLayer/prec3"]
+
+[node name="I31" parent="Camera/CanvasLayer/prec3/Items3" instance=ExtResource("12_8l5hm")]
+position = Vector2(230, 171)
+scale = Vector2(2, 2)
+
+[node name="I32" parent="Camera/CanvasLayer/prec3/Items3" instance=ExtResource("12_8l5hm")]
+position = Vector2(290, 171)
+scale = Vector2(2, 2)
+
+[node name="I33" parent="Camera/CanvasLayer/prec3/Items3" instance=ExtResource("12_8l5hm")]
+position = Vector2(350, 171)
+scale = Vector2(2, 2)
+
+[node name="Border3" type="Sprite2D" parent="Camera/CanvasLayer/prec3"]
+visible = false
+position = Vector2(200, 100)
+texture = ExtResource("13_jxy4i")
+
+[node name="prec4" type="ColorRect" parent="Camera/CanvasLayer"]
+offset_left = 1478.0
+offset_top = 852.0
+offset_right = 1878.0
+offset_bottom = 1052.0
+color = Color(0.862745, 0.694118, 0.054902, 0.784314)
+
+[node name="picon4" type="Sprite2D" parent="Camera/CanvasLayer/prec4"]
+position = Vector2(101, 101)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_v50s8")
+
+[node name="coinsicon4" type="Sprite2D" parent="Camera/CanvasLayer/prec4"]
+position = Vector2(239, 111.2)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_dgm7q")
+
+[node name="coinslabel4" type="Label" parent="Camera/CanvasLayer/prec4"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 86.2
+offset_right = 396.0
+offset_bottom = 137.2
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "$9"
+
+[node name="staricon4" type="Sprite2D" parent="Camera/CanvasLayer/prec4"]
+position = Vector2(251, 40.2)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("11_5ciuo")
+
+[node name="starlabel4" type="Label" parent="Camera/CanvasLayer/prec4"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 25.6
+offset_right = 416.0
+offset_bottom = 76.6
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "0"
+
+[node name="Items4" type="Node2D" parent="Camera/CanvasLayer/prec4"]
+
+[node name="I41" parent="Camera/CanvasLayer/prec4/Items4" instance=ExtResource("12_8l5hm")]
+position = Vector2(230, 171)
+scale = Vector2(2, 2)
+
+[node name="I42" parent="Camera/CanvasLayer/prec4/Items4" instance=ExtResource("12_8l5hm")]
+position = Vector2(290, 171)
+scale = Vector2(2, 2)
+
+[node name="I43" parent="Camera/CanvasLayer/prec4/Items4" instance=ExtResource("12_8l5hm")]
+position = Vector2(350, 171)
+scale = Vector2(2, 2)
+
+[node name="Border4" type="Sprite2D" parent="Camera/CanvasLayer/prec4"]
+visible = false
+position = Vector2(200, 100)
+texture = ExtResource("13_jxy4i")
+
+[node name="Laptop" type="Sprite2D" parent="Camera/CanvasLayer"]
+visible = false
+position = Vector2(960, 284)
+texture = ExtResource("16_rjo2y")
+
+[node name="Number" type="Label" parent="Camera/CanvasLayer"]
+visible = false
+offset_left = 881.0
+offset_top = 192.0
+offset_right = 1039.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.0339226, 0.661933, 4.42803e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 104
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CustomDie" type="Node2D" parent="Camera/CanvasLayer"]
+visible = false
+
+[node name="C+" type="Label" parent="Camera/CanvasLayer/CustomDie"]
+offset_left = 1068.0
+offset_top = 192.0
+offset_right = 1226.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.0339226, 0.661933, 4.42803e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 104
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="C-" type="Label" parent="Camera/CanvasLayer/CustomDie"]
+offset_left = 694.0
+offset_top = 192.0
+offset_right = 852.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.0339226, 0.661933, 4.42803e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 104
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Y" type="Sprite2D" parent="Camera/CanvasLayer/CustomDie"]
+position = Vector2(1147, 183)
+texture = ExtResource("17_0dgxm")
+
+[node name="X" type="Sprite2D" parent="Camera/CanvasLayer/CustomDie"]
+position = Vector2(772, 183)
+texture = ExtResource("18_uiujr")
+
+[node name="CusLap" type="Sprite2D" parent="Camera/CanvasLayer/CustomDie"]
+position = Vector2(960, 284)
+texture = ExtResource("16_rjo2y")
+
+[node name="CusNum" type="Label" parent="Camera/CanvasLayer/CustomDie"]
+offset_left = 881.0
+offset_top = 192.0
+offset_right = 1039.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.0339226, 0.661933, 4.42803e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 104
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TacoDie" type="Node2D" parent="Camera/CanvasLayer"]
+visible = false
+
+[node name="TacoLap1" type="Sprite2D" parent="Camera/CanvasLayer/TacoDie"]
+position = Vector2(800.5, 284)
+texture = ExtResource("16_rjo2y")
+
+[node name="TacoNum1" type="Label" parent="Camera/CanvasLayer/TacoDie"]
+offset_left = 721.5
+offset_top = 192.0
+offset_right = 879.5
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.0339226, 0.661933, 4.42803e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 104
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TacoLap2" type="Sprite2D" parent="Camera/CanvasLayer/TacoDie"]
+position = Vector2(1147.5, 284)
+texture = ExtResource("16_rjo2y")
+
+[node name="TacoNum2" type="Label" parent="Camera/CanvasLayer/TacoDie"]
+offset_left = 1068.5
+offset_top = 192.0
+offset_right = 1226.5
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.0339226, 0.661933, 4.42803e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 104
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Y2" type="Sprite2D" parent="Camera/CanvasLayer/TacoDie"]
+position = Vector2(1148, 165)
+texture = ExtResource("17_0dgxm")
+
+[node name="X2" type="Sprite2D" parent="Camera/CanvasLayer/TacoDie"]
+position = Vector2(802, 165)
+texture = ExtResource("18_uiujr")
+
+[node name="Textbox_small" type="ColorRect" parent="Camera/CanvasLayer"]
+visible = false
+offset_left = 471.0
+offset_top = 146.0
+offset_right = 1449.0
+offset_bottom = 329.0
+color = Color(0, 0, 0, 0.560784)
+
+[node name="Textbox_small_label" type="Label" parent="Camera/CanvasLayer/Textbox_small"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 19.0
+offset_right = 970.0
+offset_bottom = 163.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "You receive $10
+from the president!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Textbox_large" type="ColorRect" parent="Camera/CanvasLayer"]
+visible = false
+offset_left = 471.0
+offset_top = 146.0
+offset_right = 1449.0
+offset_bottom = 934.0
+color = Color(0, 0, 0, 0.560784)
+
+[node name="Textbox_large_label" type="Label" parent="Camera/CanvasLayer/Textbox_large"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 19.0
+offset_right = 970.0
+offset_bottom = 163.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Spend Duckbills
+to earn credits!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_large"]
+position = Vector2(92, 258)
+scale = Vector2(2, 2)
+texture = ExtResource("19_8j5jc")
+
+[node name="A_Label" type="Label" parent="Camera/CanvasLayer/Textbox_large/A"]
+offset_left = 35.0
+offset_top = -23.0
+offset_right = 829.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "$10 for 1 credit"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="X" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_large"]
+position = Vector2(92, 396)
+scale = Vector2(2, 2)
+texture = ExtResource("20_k37av")
+
+[node name="X_Label" type="Label" parent="Camera/CanvasLayer/Textbox_large/X"]
+offset_left = 35.0
+offset_top = -23.0
+offset_right = 829.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "$20 for 3 credits"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Y" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_large"]
+position = Vector2(92, 533)
+scale = Vector2(2, 2)
+texture = ExtResource("21_71w4q")
+
+[node name="Y_Label" type="Label" parent="Camera/CanvasLayer/Textbox_large/Y"]
+offset_left = 35.0
+offset_top = -23.0
+offset_right = 829.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "$30 for 4 credits"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="B" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_large"]
+position = Vector2(92, 674)
+scale = Vector2(2, 2)
+texture = ExtResource("22_1ugnq")
+
+[node name="B_Label" type="Label" parent="Camera/CanvasLayer/Textbox_large/B"]
+offset_left = 35.0
+offset_top = -23.0
+offset_right = 829.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Pass."
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Textbox_admin" type="ColorRect" parent="Camera/CanvasLayer"]
+visible = false
+offset_left = 471.0
+offset_top = 224.0
+offset_right = 1449.0
+offset_bottom = 849.0
+color = Color(0, 0, 0, 0.560784)
+
+[node name="Admin_label" type="Label" parent="Camera/CanvasLayer/Textbox_admin"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 19.0
+offset_right = 970.0
+offset_bottom = 163.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Welcome to the Admissions office!
+What can we help with today?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_admin"]
+position = Vector2(92, 258)
+scale = Vector2(2, 2)
+texture = ExtResource("19_8j5jc")
+
+[node name="A_Label" type="Label" parent="Camera/CanvasLayer/Textbox_admin/A"]
+offset_left = 35.0
+offset_top = -23.0
+offset_right = 829.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Free: Steal $5 from
+each player."
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="X" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_admin"]
+position = Vector2(92, 396)
+scale = Vector2(2, 2)
+texture = ExtResource("20_k37av")
+
+[node name="X_Label" type="Label" parent="Camera/CanvasLayer/Textbox_admin/X"]
+offset_left = 35.0
+offset_top = -23.0
+offset_right = 829.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "$50: Steal 1 credit from
+each player"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="B" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_admin"]
+position = Vector2(92, 537)
+scale = Vector2(2, 2)
+texture = ExtResource("22_1ugnq")
+
+[node name="B_Label" type="Label" parent="Camera/CanvasLayer/Textbox_admin/B"]
+offset_left = 35.0
+offset_top = -23.0
+offset_right = 829.0
+offset_bottom = 72.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Pass."
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Textbox_item" type="ColorRect" parent="Camera/CanvasLayer"]
+visible = false
+offset_left = 471.0
+offset_top = 283.0
+offset_right = 1449.0
+offset_bottom = 824.0
+color = Color(0, 0, 0, 0.560784)
+
+[node name="Textbox_item_label" type="Label" parent="Camera/CanvasLayer/Textbox_item"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -19.0
+offset_right = 970.0
+offset_bottom = 125.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Use an Item:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_item"]
+position = Vector2(133, 460)
+scale = Vector2(2, 2)
+texture = ExtResource("19_8j5jc")
+
+[node name="A_Label" type="Label" parent="Camera/CanvasLayer/Textbox_item/A"]
+anchors_preset = -1
+anchor_left = -9.39844
+anchor_right = -9.39844
+offset_left = 396.5
+offset_top = -87.0
+offset_right = 1222.5
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 35
+text = "Roll 2
+values and
+choose 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Items" parent="Camera/CanvasLayer/Textbox_item/A" instance=ExtResource("12_8l5hm")]
+position = Vector2(0, -134.5)
+scale = Vector2(4, 4)
+
+[node name="X" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_item"]
+position = Vector2(388, 460)
+scale = Vector2(2, 2)
+texture = ExtResource("20_k37av")
+
+[node name="X_Label" type="Label" parent="Camera/CanvasLayer/Textbox_item/X"]
+anchors_preset = -1
+anchor_left = -14.1016
+anchor_right = -14.1016
+offset_left = 697.5
+offset_top = -87.5
+offset_right = 1523.5
+offset_bottom = 26.5
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 35
+text = "Choose what
+just before
+the credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Items" parent="Camera/CanvasLayer/Textbox_item/X" instance=ExtResource("12_8l5hm")]
+position = Vector2(0, -134.5)
+scale = Vector2(4, 4)
+
+[node name="Y" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_item"]
+position = Vector2(645, 460)
+scale = Vector2(2, 2)
+texture = ExtResource("21_71w4q")
+
+[node name="Y_Label" type="Label" parent="Camera/CanvasLayer/Textbox_item/Y"]
+anchors_preset = -1
+anchor_left = -18.8047
+anchor_top = 0.0078125
+anchor_right = -18.8047
+anchor_bottom = 0.0078125
+offset_left = 999.0
+offset_top = -87.5
+offset_right = 1825.0
+offset_bottom = 26.5
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 35
+text = "Warp to
+just before
+the credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Items" parent="Camera/CanvasLayer/Textbox_item/Y" instance=ExtResource("12_8l5hm")]
+position = Vector2(0, -134.5)
+scale = Vector2(4, 4)
+
+[node name="B" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_item"]
+position = Vector2(869, 460)
+scale = Vector2(2, 2)
+texture = ExtResource("22_1ugnq")
+
+[node name="B_Label" type="Label" parent="Camera/CanvasLayer/Textbox_item/B"]
+anchors_preset = -1
+anchor_left = -10.4688
+anchor_right = -10.4688
+offset_left = 640.0
+offset_top = -66.5
+offset_right = 1434.0
+offset_bottom = 28.5
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Pass."
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Textbox_shop" type="ColorRect" parent="Camera/CanvasLayer"]
+visible = false
+offset_left = 471.0
+offset_top = 262.0
+offset_right = 1449.0
+offset_bottom = 824.0
+color = Color(0, 0, 0, 0.560784)
+
+[node name="Textbox_item_label" type="Label" parent="Camera/CanvasLayer/Textbox_shop"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -19.0
+offset_right = 970.0
+offset_bottom = 125.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Buy an Item:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_shop"]
+position = Vector2(133, 499)
+scale = Vector2(2, 2)
+texture = ExtResource("19_8j5jc")
+
+[node name="A_Label" type="Label" parent="Camera/CanvasLayer/Textbox_shop/A"]
+anchors_preset = -1
+anchor_left = -9.39844
+anchor_right = -9.39844
+offset_left = 396.5
+offset_top = -87.0
+offset_right = 1222.5
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 35
+text = "Burger,
+pizza, and
+sandwich"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="A_Price" type="Label" parent="Camera/CanvasLayer/Textbox_shop/A"]
+anchors_preset = -1
+anchor_left = -9.39844
+anchor_right = -9.39844
+offset_left = 394.5
+offset_top = -218.5
+offset_right = 1220.5
+offset_bottom = -104.5
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 50
+text = "$6"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Items" parent="Camera/CanvasLayer/Textbox_shop/A" instance=ExtResource("12_8l5hm")]
+position = Vector2(0, -134.5)
+scale = Vector2(4, 4)
+
+[node name="X" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_shop"]
+position = Vector2(388, 499)
+scale = Vector2(2, 2)
+texture = ExtResource("20_k37av")
+
+[node name="X_Label" type="Label" parent="Camera/CanvasLayer/Textbox_shop/X"]
+anchors_preset = -1
+anchor_left = -14.1016
+anchor_right = -14.1016
+offset_left = 697.5
+offset_top = -87.5
+offset_right = 1523.5
+offset_bottom = 26.5
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 35
+text = "Choose what
+just before
+the credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="X_Price" type="Label" parent="Camera/CanvasLayer/Textbox_shop/X"]
+anchors_preset = -1
+anchor_left = -14.1016
+anchor_right = -14.1016
+offset_left = 695.5
+offset_top = -219.0
+offset_right = 1521.5
+offset_bottom = -105.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 50
+text = "$8"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Items" parent="Camera/CanvasLayer/Textbox_shop/X" instance=ExtResource("12_8l5hm")]
+position = Vector2(0, -134.5)
+scale = Vector2(4, 4)
+
+[node name="Y" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_shop"]
+position = Vector2(645, 499)
+scale = Vector2(2, 2)
+texture = ExtResource("21_71w4q")
+
+[node name="Y_Label" type="Label" parent="Camera/CanvasLayer/Textbox_shop/Y"]
+anchors_preset = -1
+anchor_left = -18.8047
+anchor_top = 0.0078125
+anchor_right = -18.8047
+anchor_bottom = 0.0078125
+offset_left = 999.0
+offset_top = -87.5
+offset_right = 1825.0
+offset_bottom = 26.5
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 35
+text = "Warp to
+just before
+the credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Y_Price" type="Label" parent="Camera/CanvasLayer/Textbox_shop/Y"]
+anchors_preset = -1
+anchor_left = -18.8047
+anchor_top = 0.0078125
+anchor_right = -18.8047
+anchor_bottom = 0.0078125
+offset_left = 997.0
+offset_top = -219.0
+offset_right = 1823.0
+offset_bottom = -105.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 50
+text = "$12"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Items" parent="Camera/CanvasLayer/Textbox_shop/Y" instance=ExtResource("12_8l5hm")]
+position = Vector2(0, -134.5)
+scale = Vector2(4, 4)
+
+[node name="B" type="Sprite2D" parent="Camera/CanvasLayer/Textbox_shop"]
+position = Vector2(869, 499)
+scale = Vector2(2, 2)
+texture = ExtResource("22_1ugnq")
+
+[node name="B_Label" type="Label" parent="Camera/CanvasLayer/Textbox_shop/B"]
+anchors_preset = -1
+anchor_left = -10.4688
+anchor_right = -10.4688
+offset_left = 640.0
+offset_top = -66.5
+offset_right = 1434.0
+offset_bottom = 28.5
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 45
+text = "Pass."
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TurnLabel" type="Label" parent="Camera/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -11.5
+offset_right = 30.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 200
+text = "Turn 
+1/10"
+horizontal_alignment = 1
+
+[node name="TurnLabelSmall" type="Label" parent="Camera/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.5
+offset_top = -533.0
+offset_right = 194.5
+offset_bottom = -332.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 75
+text = "1/10"
+horizontal_alignment = 1
+
+[node name="Plus_Coin_Label" type="Label" parent="Camera/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -160.0
+offset_right = 95.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 80
+text = "+$3"
+horizontal_alignment = 1
+
+[node name="Bonus" type="Label" parent="Camera/CanvasLayer"]
+visible = false
+offset_left = 997.0
+offset_top = 279.0
+offset_right = 1037.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(0.0339226, 0.661933, 4.42803e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("10_co7o2")
+theme_override_font_sizes/font_size = 24
+text = "+15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Black" type="ColorRect" parent="Camera/CanvasLayer"]
+z_index = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Spaces" type="Node2D" parent="."]
+
+[node name="S001" type="TextureRect" parent="Spaces"]
+modulate = Color(0.407843, 0.172549, 0.592157, 1)
+offset_left = -66.0
+offset_top = 1061.0
+offset_right = 434.0
+offset_bottom = 1561.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S002" type="TextureRect" parent="Spaces"]
+modulate = Color(0.407843, 0.172549, 0.592157, 1)
+offset_left = -54.0
+offset_top = 861.0
+offset_right = 446.0
+offset_bottom = 1361.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S003" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 21.0
+offset_top = 695.0
+offset_right = 521.0
+offset_bottom = 1195.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S004" type="TextureRect" parent="Spaces"]
+offset_left = 168.0
+offset_top = 546.0
+offset_right = 668.0
+offset_bottom = 1046.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S005" type="TextureRect" parent="Spaces"]
+visible = false
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 339.0
+offset_top = 412.0
+offset_right = 839.0
+offset_bottom = 912.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S006" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 506.0
+offset_top = 321.0
+offset_right = 1006.0
+offset_bottom = 821.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S007" type="TextureRect" parent="Spaces"]
+offset_left = 689.0
+offset_top = 251.0
+offset_right = 1189.0
+offset_bottom = 751.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S008" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 884.0
+offset_top = 245.0
+offset_right = 1384.0
+offset_bottom = 745.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S009" type="TextureRect" parent="Spaces"]
+offset_left = 1058.0
+offset_top = 247.0
+offset_right = 1558.0
+offset_bottom = 747.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S010" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 1232.0
+offset_top = 263.0
+offset_right = 1732.0
+offset_bottom = 763.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S011" type="TextureRect" parent="Spaces"]
+offset_left = 1438.0
+offset_top = 314.0
+offset_right = 1938.0
+offset_bottom = 814.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S012" type="TextureRect" parent="Spaces"]
+modulate = Color(0.407843, 0.172549, 0.592157, 1)
+offset_left = 1508.0
+offset_top = 397.0
+offset_right = 2008.0
+offset_bottom = 897.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S013" type="TextureRect" parent="Spaces"]
+modulate = Color(0.407843, 0.172549, 0.592157, 1)
+offset_left = 1621.0
+offset_top = 389.0
+offset_right = 2121.0
+offset_bottom = 889.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S014" type="TextureRect" parent="Spaces"]
+offset_left = 1718.0
+offset_top = 321.0
+offset_right = 2218.0
+offset_bottom = 821.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S015" type="TextureRect" parent="Spaces"]
+offset_left = 1883.0
+offset_top = 351.0
+offset_right = 2383.0
+offset_bottom = 851.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S016" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 2026.0
+offset_top = 409.0
+offset_right = 2526.0
+offset_bottom = 909.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S017" type="TextureRect" parent="Spaces"]
+offset_left = 2177.0
+offset_top = 476.0
+offset_right = 2677.0
+offset_bottom = 976.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S018" type="TextureRect" parent="Spaces"]
+offset_left = 2331.0
+offset_top = 559.0
+offset_right = 2831.0
+offset_bottom = 1059.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S019" type="TextureRect" parent="Spaces"]
+offset_left = 2724.0
+offset_top = 757.0
+offset_right = 3224.0
+offset_bottom = 1257.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S020" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 2981.0
+offset_top = 878.0
+offset_right = 3481.0
+offset_bottom = 1378.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S021" type="TextureRect" parent="Spaces"]
+offset_left = 3221.0
+offset_top = 1003.0
+offset_right = 3721.0
+offset_bottom = 1503.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S022" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 3463.0
+offset_top = 1132.0
+offset_right = 3963.0
+offset_bottom = 1632.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S023" type="TextureRect" parent="Spaces"]
+offset_left = 3706.0
+offset_top = 1239.0
+offset_right = 4206.0
+offset_bottom = 1739.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S024" type="TextureRect" parent="Spaces"]
+offset_left = 3921.0
+offset_top = 1407.0
+offset_right = 4421.0
+offset_bottom = 1907.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S025" type="TextureRect" parent="Spaces"]
+offset_left = 3675.0
+offset_top = 1434.0
+offset_right = 4175.0
+offset_bottom = 1934.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S026" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 3414.0
+offset_top = 1267.0
+offset_right = 3914.0
+offset_bottom = 1767.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S027" type="TextureRect" parent="Spaces"]
+offset_left = 3409.0
+offset_top = 1413.0
+offset_right = 3909.0
+offset_bottom = 1913.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S028" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 3155.0
+offset_top = 1499.0
+offset_right = 3655.0
+offset_bottom = 1999.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S029" type="TextureRect" parent="Spaces"]
+offset_left = 2874.0
+offset_top = 1516.0
+offset_right = 3374.0
+offset_bottom = 2016.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S030" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 2583.0
+offset_top = 1518.0
+offset_right = 3083.0
+offset_bottom = 2018.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S031" type="TextureRect" parent="Spaces"]
+offset_left = 2286.0
+offset_top = 1516.0
+offset_right = 2786.0
+offset_bottom = 2016.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S032" type="TextureRect" parent="Spaces"]
+offset_left = 1950.0
+offset_top = 1505.0
+offset_right = 2450.0
+offset_bottom = 2005.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S033" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 1696.0
+offset_top = 1401.0
+offset_right = 2196.0
+offset_bottom = 1901.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S034" type="TextureRect" parent="Spaces"]
+offset_left = 1526.0
+offset_top = 1349.0
+offset_right = 2026.0
+offset_bottom = 1849.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S035" type="TextureRect" parent="Spaces"]
+offset_left = 1380.0
+offset_top = 1384.0
+offset_right = 1880.0
+offset_bottom = 1884.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S036" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 1216.0
+offset_top = 1256.0
+offset_right = 1716.0
+offset_bottom = 1756.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S037" type="TextureRect" parent="Spaces"]
+offset_left = 1062.0
+offset_top = 1165.0
+offset_right = 1562.0
+offset_bottom = 1665.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S038" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 940.0
+offset_top = 1245.0
+offset_right = 1440.0
+offset_bottom = 1745.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S039" type="TextureRect" parent="Spaces"]
+offset_left = 790.0
+offset_top = 1267.0
+offset_right = 1290.0
+offset_bottom = 1767.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S040" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 661.0
+offset_top = 1218.0
+offset_right = 1161.0
+offset_bottom = 1718.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S041" type="TextureRect" parent="Spaces"]
+offset_left = 505.0
+offset_top = 1157.0
+offset_right = 1005.0
+offset_bottom = 1657.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S042" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 325.0
+offset_top = 1092.0
+offset_right = 825.0
+offset_bottom = 1592.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S043" type="TextureRect" parent="Spaces"]
+offset_left = 132.0
+offset_top = 1067.0
+offset_right = 632.0
+offset_bottom = 1567.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S044" type="TextureRect" parent="Spaces"]
+offset_left = 564.0
+offset_top = 955.0
+offset_right = 1064.0
+offset_bottom = 1455.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S045" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 644.0
+offset_top = 800.0
+offset_right = 1144.0
+offset_bottom = 1300.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S046" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 713.0
+offset_top = 643.0
+offset_right = 1213.0
+offset_bottom = 1143.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S047" type="TextureRect" parent="Spaces"]
+offset_left = 778.0
+offset_top = 449.0
+offset_right = 1278.0
+offset_bottom = 949.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S048" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 1188.0
+offset_top = 504.0
+offset_right = 1688.0
+offset_bottom = 1004.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S049" type="TextureRect" parent="Spaces"]
+offset_left = 1166.0
+offset_top = 694.0
+offset_right = 1666.0
+offset_bottom = 1194.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S050" type="TextureRect" parent="Spaces"]
+offset_left = 1133.0
+offset_top = 921.0
+offset_right = 1633.0
+offset_bottom = 1421.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S051" type="TextureRect" parent="Spaces"]
+offset_left = 1180.0
+offset_top = 1076.0
+offset_right = 1680.0
+offset_bottom = 1576.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S052" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 1354.0
+offset_top = 1068.0
+offset_right = 1854.0
+offset_bottom = 1568.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S053" type="TextureRect" parent="Spaces"]
+offset_left = 1490.0
+offset_top = 1176.0
+offset_right = 1990.0
+offset_bottom = 1676.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S054" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 1631.0
+offset_top = 1128.0
+offset_right = 2131.0
+offset_bottom = 1628.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S055" type="TextureRect" parent="Spaces"]
+offset_left = 1724.0
+offset_top = 965.0
+offset_right = 2224.0
+offset_bottom = 1465.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S056" type="TextureRect" parent="Spaces"]
+offset_left = 2035.0
+offset_top = 871.0
+offset_right = 2535.0
+offset_bottom = 1371.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S057" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 2194.0
+offset_top = 818.0
+offset_right = 2694.0
+offset_bottom = 1318.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S058" type="TextureRect" parent="Spaces"]
+offset_left = 2334.0
+offset_top = 743.0
+offset_right = 2834.0
+offset_bottom = 1243.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S059" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 1026.0
+offset_top = 1023.0
+offset_right = 1526.0
+offset_bottom = 1523.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S060" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 4062.0
+offset_top = 1547.0
+offset_right = 4562.0
+offset_bottom = 2047.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S061" type="TextureRect" parent="Spaces"]
+offset_left = 4063.0
+offset_top = 1767.0
+offset_right = 4563.0
+offset_bottom = 2267.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S062" type="TextureRect" parent="Spaces"]
+offset_left = 4066.0
+offset_top = 1984.0
+offset_right = 4566.0
+offset_bottom = 2484.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S063" type="TextureRect" parent="Spaces"]
+modulate = Color(0.407843, 0.172549, 0.592157, 1)
+offset_left = 4399.0
+offset_top = 1980.0
+offset_right = 4899.0
+offset_bottom = 2480.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S064" type="TextureRect" parent="Spaces"]
+modulate = Color(0.407843, 0.172549, 0.592157, 1)
+offset_left = 4714.0
+offset_top = 1984.0
+offset_right = 5214.0
+offset_bottom = 2484.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S065" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 5038.0
+offset_top = 1984.0
+offset_right = 5538.0
+offset_bottom = 2484.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S066" type="TextureRect" parent="Spaces"]
+offset_left = 5378.0
+offset_top = 1984.0
+offset_right = 5878.0
+offset_bottom = 2484.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S067" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 5379.0
+offset_top = 2388.0
+offset_right = 5879.0
+offset_bottom = 2888.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S068" type="TextureRect" parent="Spaces"]
+offset_left = 5379.0
+offset_top = 2766.0
+offset_right = 5879.0
+offset_bottom = 3266.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S069" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 0, 0, 1)
+offset_left = 5030.0
+offset_top = 2772.0
+offset_right = 5530.0
+offset_bottom = 3272.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S070" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 4681.0
+offset_top = 2773.0
+offset_right = 5181.0
+offset_bottom = 3273.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S071" type="TextureRect" parent="Spaces"]
+offset_left = 4374.0
+offset_top = 2773.0
+offset_right = 4874.0
+offset_bottom = 3273.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S072" type="TextureRect" parent="Spaces"]
+offset_left = 4066.0
+offset_top = 2771.0
+offset_right = 4566.0
+offset_bottom = 3271.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S073" type="TextureRect" parent="Spaces"]
+offset_left = 4052.0
+offset_top = 2260.0
+offset_right = 4552.0
+offset_bottom = 2760.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S074" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 3871.0
+offset_top = 1984.0
+offset_right = 4371.0
+offset_bottom = 2484.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S075" type="TextureRect" parent="Spaces"]
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 3677.0
+offset_top = 1984.0
+offset_right = 4177.0
+offset_bottom = 2484.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S101" type="TextureRect" parent="Spaces"]
+visible = false
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 2510.0
+offset_top = 644.0
+offset_right = 3010.0
+offset_bottom = 1144.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S102" type="TextureRect" parent="Spaces"]
+visible = false
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 1558.0
+offset_top = 222.0
+offset_right = 2058.0
+offset_bottom = 722.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S103" type="TextureRect" parent="Spaces"]
+visible = false
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 1860.0
+offset_top = 891.0
+offset_right = 2360.0
+offset_bottom = 1391.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="S104" type="TextureRect" parent="Spaces"]
+visible = false
+modulate = Color(1, 1, 0.435294, 1)
+offset_left = 4059.0
+offset_top = 2558.0
+offset_right = 4559.0
+offset_bottom = 3058.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(250, 250)
+texture = ExtResource("6_2f74l")
+
+[node name="PathXYs" type="Node2D" parent="."]
+
+[node name="X11" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1491, 591)
+texture = ExtResource("18_uiujr")
+
+[node name="X12" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1687, 636)
+texture = ExtResource("18_uiujr")
+
+[node name="X27" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(3703, 1453)
+texture = ExtResource("18_uiujr")
+
+[node name="X30" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(4085, 1664)
+texture = ExtResource("18_uiujr")
+
+[node name="X44" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1366, 1485)
+texture = ExtResource("18_uiujr")
+
+[node name="X49" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(690, 1355)
+texture = ExtResource("18_uiujr")
+
+[node name="X61" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1301, 1199)
+texture = ExtResource("18_uiujr")
+
+[node name="X64" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1698, 1592)
+texture = ExtResource("18_uiujr")
+
+[node name="X75" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(4214, 2208)
+texture = ExtResource("18_uiujr")
+
+[node name="Y11" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1570, 553)
+texture = ExtResource("17_0dgxm")
+
+[node name="Y12" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1802, 494)
+texture = ExtResource("17_0dgxm")
+
+[node name="Y27" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(3772, 1429)
+texture = ExtResource("17_0dgxm")
+
+[node name="Y30" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(4229, 1725)
+texture = ExtResource("17_0dgxm")
+
+[node name="Y44" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1426, 1422)
+texture = ExtResource("17_0dgxm")
+
+[node name="Y49" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(746, 1315)
+texture = ExtResource("17_0dgxm")
+
+[node name="Y61" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1374, 1252)
+texture = ExtResource("17_0dgxm")
+
+[node name="Y64" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(1728, 1513)
+texture = ExtResource("17_0dgxm")
+
+[node name="Y75" type="Sprite2D" parent="PathXYs"]
+visible = false
+position = Vector2(4432, 2212)
+texture = ExtResource("17_0dgxm")
+
+[node name="Credits" type="Node2D" parent="."]
+position = Vector2(889, 451)
+scale = Vector2(0.2, 0.2)
+
+[node name="7" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(245, 140)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5ciuo")
+
+[node name="17" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(7685, 1265)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5ciuo")
+
+[node name="29" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(11170, 6465)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5ciuo")
+
+[node name="35" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(3700, 5805)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5ciuo")
+
+[node name="44" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(-380, 3660)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5ciuo")
+
+[node name="49" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(2630, 2355)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5ciuo")
+
+[node name="61" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(17115, 7720)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5ciuo")
+
+[node name="73" type="Sprite2D" parent="Credits"]
+visible = false
+position = Vector2(17060, 10185)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5ciuo")
+
+[node name="Icons" type="Node2D" parent="."]
+
+[node name="A1" type="Sprite2D" parent="Icons"]
+position = Vector2(1307, 495)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A2" type="Sprite2D" parent="Icons"]
+position = Vector2(755, 1405.54)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A3" type="Sprite2D" parent="Icons"]
+position = Vector2(3404, 1748)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A4" type="Sprite2D" parent="Icons"]
+position = Vector2(3924, 1683)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A5" type="Sprite2D" parent="Icons"]
+position = Vector2(4623, 3020.54)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A6" type="Sprite2D" parent="Icons"]
+position = Vector2(5627, 2232.54)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A7" type="Sprite2D" parent="Icons"]
+position = Vector2(2285, 1119.54)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A8" type="Sprite2D" parent="Icons"]
+position = Vector2(893, 1048)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A9" type="Sprite2D" parent="Icons"]
+position = Vector2(1967, 569)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A10" type="Sprite2D" parent="Icons"]
+position = Vector2(1382, 1170)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="A11" type="Sprite2D" parent="Icons"]
+position = Vector2(2974, 1005)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("9_dgm7q")
+
+[node name="B1" type="Sprite2D" parent="Icons"]
+position = Vector2(1466, 1504)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("23_3w2by")
+
+[node name="B2" type="Sprite2D" parent="Icons"]
+position = Vector2(1276, 1270)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("23_3w2by")
+
+[node name="B3" type="Sprite2D" parent="Icons"]
+position = Vector2(1605, 1316)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("23_3w2by")
+
+[node name="B4" type="Sprite2D" parent="Icons"]
+position = Vector2(271, 940)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("23_3w2by")
+
+[node name="B5" type="Sprite2D" parent="Icons"]
+position = Vector2(4122, 2232)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("23_3w2by")
+
+[node name="B6" type="Sprite2D" parent="Icons"]
+position = Vector2(3713, 1379)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("23_3w2by")
+
+[node name="Ac1" type="Sprite2D" parent="Icons"]
+position = Vector2(911, 1468)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("24_m1lrr")
+
+[node name="Ac2" type="Sprite2D" parent="Icons"]
+position = Vector2(963, 894)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("24_m1lrr")
+
+[node name="Ac3" type="Sprite2D" parent="Icons"]
+position = Vector2(4313, 1797)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("24_m1lrr")
+
+[node name="Ac4" type="Sprite2D" parent="Icons"]
+position = Vector2(3926, 2233)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("24_m1lrr")
+
+[node name="Ac5" type="Sprite2D" parent="Icons"]
+position = Vector2(5288, 2233)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("24_m1lrr")
+
+[node name="Ac7" type="Sprite2D" parent="Icons"]
+position = Vector2(5628, 2640)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("24_m1lrr")
+
+[node name="Ac8" type="Sprite2D" parent="Icons"]
+position = Vector2(4931, 3024)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("24_m1lrr")
+
+[node name="C1" type="Sprite2D" parent="Icons"]
+position = Vector2(574, 1346)
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("25_qnmkl")
+
+[node name="S1" type="Sprite2D" parent="Icons"]
+position = Vector2(184, 1312)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("26_hc40r")
+
+[node name="S2" type="Sprite2D" parent="Icons"]
+position = Vector2(195, 1111)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("26_hc40r")
+
+[node name="S3" type="Sprite2D" parent="Icons"]
+position = Vector2(1758, 647)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("26_hc40r")
+
+[node name="S4" type="Sprite2D" parent="Icons"]
+position = Vector2(1871, 639)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("26_hc40r")
+
+[node name="S5" type="Sprite2D" parent="Icons"]
+position = Vector2(4649, 2230)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("26_hc40r")
+
+[node name="S6" type="Sprite2D" parent="Icons"]
+position = Vector2(4961, 2233)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("26_hc40r")
+
+[node name="Ad1" type="Sprite2D" parent="Icons"]
+position = Vector2(1134, 493)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("27_1bl1v")
+
+[node name="Sp1" type="Sprite2D" parent="Icons"]
+position = Vector2(1438, 750)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("28_r5216")
+region_enabled = true
+region_rect = Rect2(328.403, 7.22031, 84.1492, 117.609)
+
+[node name="Sp2" type="Sprite2D" parent="Icons"]
+position = Vector2(2832, 1761)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("28_r5216")
+region_enabled = true
+region_rect = Rect2(18.1818, 13.4546, 72.7273, 111.818)
+
+[node name="Sp3" type="Sprite2D" parent="Icons"]
+position = Vector2(3663, 1515)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("28_r5216")
+region_enabled = true
+region_rect = Rect2(256.136, 18.3081, 70.7851, 107.109)
+
+[node name="L1" type="Sprite2D" parent="Icons"]
+position = Vector2(2444, 1064)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("29_0lrhs")
+region_rect = Rect2(256.136, 18.3081, 70.7851, 107.109)
+
+[node name="Sh1" type="Sprite2D" parent="Icons"]
+position = Vector2(2815, 838)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_5een3")
+region_rect = Rect2(256.136, 18.3081, 70.7851, 107.109)
+
+[node name="Sh2" type="Sprite2D" parent="Icons"]
+position = Vector2(1818, 402)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_5een3")
+region_rect = Rect2(256.136, 18.3081, 70.7851, 107.109)
+
+[node name="Sh3" type="Sprite2D" parent="Icons"]
+position = Vector2(2129, 1201)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_5een3")
+region_rect = Rect2(256.136, 18.3081, 70.7851, 107.109)
+
+[node name="Sh4" type="Sprite2D" parent="Icons"]
+position = Vector2(4219, 2815)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_5een3")
+region_rect = Rect2(256.136, 18.3081, 70.7851, 107.109)
+
+[node name="H1" type="Sprite2D" parent="Icons"]
+position = Vector2(574, 617)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("31_pmjtb")
+region_rect = Rect2(256.136, 18.3081, 70.7851, 107.109)
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Player4" parent="Players" instance=ExtResource("32_6knch")]
+position = Vector2(2124, 385)
+scale = Vector2(3, 3)
+
+[node name="Player3" parent="Players" instance=ExtResource("32_6knch")]
+position = Vector2(2034, 399)
+scale = Vector2(3, 3)
+
+[node name="Player2" parent="Players" instance=ExtResource("32_6knch")]
+position = Vector2(2119, 485)
+scale = Vector2(3, 3)
+
+[node name="Player1" parent="Players" instance=ExtResource("32_6knch")]
+position = Vector2(2033, 495)
+scale = Vector2(3, 3)
+
+[connection signal="timeout" from="Number_Timer" to="." method="_on_number_timer_timeout"]

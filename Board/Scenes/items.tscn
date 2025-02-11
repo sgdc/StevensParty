@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4fs2a82ivfa8"]
+
+[ext_resource type="Script" uid="uid://cxbigwkpb2c83" path="res://Board/Scripts/items.gd" id="1_2ncl6"]
+[ext_resource type="Texture2D" uid="uid://c2oculsbm8to2" path="res://Board/Assets/Items/burger.png" id="1_iiwvv"]
+[ext_resource type="Texture2D" uid="uid://bdu1geamayt7e" path="res://Board/Assets/Items/coffee.png" id="1_pt64p"]
+[ext_resource type="Texture2D" uid="uid://bittbakjjru63" path="res://Board/Assets/Items/sandwich.png" id="2_2ncl6"]
+[ext_resource type="Texture2D" uid="uid://dg76j2owy66rg" path="res://Board/Assets/Items/bagel.png" id="3_8xvlr"]
+[ext_resource type="Texture2D" uid="uid://dgtk1e6wi0k5l" path="res://Board/Assets/Items/pizza.png" id="5_mo3qd"]
+[ext_resource type="Texture2D" uid="uid://wh5db0kggfj7" path="res://Board/Assets/Items/taco.png" id="6_hnlap"]
+[ext_resource type="Texture2D" uid="uid://7sxnbcdbxeiu" path="res://Board/Assets/Items/merch.png" id="7_je60t"]
+[ext_resource type="Texture2D" uid="uid://bhqjxx3ty61ms" path="res://Board/Assets/Items/candy.png" id="9_8xvlr"]
+
+[node name="Items" type="Node2D"]
+script = ExtResource("1_2ncl6")
+
+[node name="Coffee" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_pt64p")
+
+[node name="Burger" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_iiwvv")
+
+[node name="Bagel" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_8xvlr")
+
+[node name="Sandwhich" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_2ncl6")
+
+[node name="Pizza" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("5_mo3qd")
+
+[node name="Tacco" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("6_hnlap")
+
+[node name="Merch" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("7_je60t")
+
+[node name="Candy" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_8xvlr")
+
+[node name="DH" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-2, 5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_iiwvv")
+
+[node name="DH1" type="Sprite2D" parent="DH"]
+texture_filter = 1
+position = Vector2(-1.66667, -15)
+texture = ExtResource("2_2ncl6")
+
+[node name="DH2" type="Sprite2D" parent="DH"]
+texture_filter = 1
+position = Vector2(10, -5)
+texture = ExtResource("5_mo3qd")
