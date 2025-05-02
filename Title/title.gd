@@ -1,6 +1,6 @@
 extends Control
 
-var player_sel = [null, 0, 0,0,4]#ALL 0s
+var player_sel = [null, 0,0,0,0] #ALL 0s
 var char_select = false
 var player_spot = [null, 1, 2, 3, 4]
 
@@ -256,27 +256,27 @@ func set_characters():
 				Global.playercharnum[i] = 4
 				pickable_pos[i] = fps_pos[4]
 			5:
-				
+				Global.playerchar[i] = "Wizard"
 				Global.playercharnum[i] = 5
 				pickable_pos[i] = fps_pos[5]
 			6:
-				
+				Global.playerchar[i] = "Rabbit"
 				Global.playercharnum[i] = 6
 				pickable_pos[i] = fps_pos[6]
 			7:
-				
+				Global.playerchar[i] = "Bobby"
 				Global.playercharnum[i] = 7
 				pickable_pos[i] = fps_pos[7]
 			8:
-				
+				Global.playerchar[i] = "FaraOrst"
 				Global.playercharnum[i] = 8
 				pickable_pos[i] = fps_pos[8]
 			9:
-				
+				Global.playerchar[i] = "Aria"
 				Global.playercharnum[i] = 9
 				pickable_pos[i] = fps_pos[9]
 			10:
-				
+				Global.playerchar[i] = "Peepers"
 				Global.playercharnum[i] = 10
 				pickable_pos[i] = fps_pos[10]
 		i += 1

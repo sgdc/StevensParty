@@ -77,6 +77,10 @@ func _physics_process(_delta):
 	input_direction = input_direction.normalized()
 	
 	velocity = input_direction * speed
+	if velocity.x != 0 or velocity.y != 0:
+		get_node(character).play("run")
+	else:
+		get_node(character).play("idle")
 	move_and_slide()
 	
 	xAxisRL = Input.get_joy_axis(controller_number, JOY_AXIS_RIGHT_X)

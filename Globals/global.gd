@@ -68,9 +68,9 @@ var icon = [null,\
 "res://MiscAssets/Players/Icons/Hunter.png",\
 "res://MiscAssets/Players/Icons/Watch.png",\
 "res://MiscAssets/Players/Icons/Thief.png",\
-"a",\
-"b",\
-"c",\
-"d",\
-"e",\
-"f"]
+"res://MiscAssets/Players/Icons/Wizard.png",\
+"res://MiscAssets/Players/Icons/Rabbit.png",\
+"res://MiscAssets/Players/Icons/Bobby.png",\
+"res://MiscAssets/Players/Icons/FaraOrst.png",\
+"res://MiscAssets/Players/Icons/Aria.png",\
+"res://MiscAssets/Players/Icons/Peepers.png"]

@@ -891,6 +891,7 @@ position = Vector2(-3.14286, -14.4286)
 [node name="Watch" parent="CharacterSelect/CharButtons/CharButton3/Players" index="2"]
 visible = true
 position = Vector2(0.5, -18)
+animation = &"idle"
 
 [node name="Name" type="Label" parent="CharacterSelect/CharButtons/CharButton3"]
 layout_mode = 1
@@ -970,7 +971,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/disabled = SubResource("StyleBoxFlat_3eqdi")
 
 [node name="Players" parent="CharacterSelect/CharButtons/CharButton5" instance=ExtResource("16_kdgyt")]
-position = Vector2(146, 265)
+position = Vector2(146, 271)
 scale = Vector2(8, 8)
 script = null
 
@@ -982,6 +983,9 @@ position = Vector2(-3.14286, -14.4286)
 
 [node name="Watch" parent="CharacterSelect/CharButtons/CharButton5/Players" index="2"]
 position = Vector2(0.5, -18)
+
+[node name="Wizard" parent="CharacterSelect/CharButtons/CharButton5/Players" index="4"]
+visible = true
 
 [node name="Name" type="Label" parent="CharacterSelect/CharButtons/CharButton5"]
 layout_mode = 1
@@ -999,7 +1003,7 @@ grow_vertical = 0
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_k61ug")
 theme_override_font_sizes/font_size = 35
-text = "?"
+text = "The Wizard"
 horizontal_alignment = 1
 
 [node name="CharButton6" type="Button" parent="CharacterSelect/CharButtons"]
@@ -1021,6 +1025,12 @@ script = null
 [node name="Penguin" parent="CharacterSelect/CharButtons/CharButton6/Players" index="0"]
 visible = false
 
+[node name="Rabbit" parent="CharacterSelect/CharButtons/CharButton6/Players" index="5"]
+visible = true
+position = Vector2(-22.8571, -31.7143)
+frame = 1
+frame_progress = 0.0
+
 [node name="Name" type="Label" parent="CharacterSelect/CharButtons/CharButton6"]
 layout_mode = 1
 anchors_preset = 7
@@ -1037,7 +1047,7 @@ grow_vertical = 0
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_k61ug")
 theme_override_font_sizes/font_size = 35
-text = "?"
+text = "The Rabbit"
 horizontal_alignment = 1
 
 [node name="CharButton7" type="Button" parent="CharacterSelect/CharButtons"]
@@ -1052,8 +1062,8 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/disabled = SubResource("StyleBoxFlat_6aagf")
 
 [node name="Players" parent="CharacterSelect/CharButtons/CharButton7" instance=ExtResource("16_kdgyt")]
-position = Vector2(163, 230)
-scale = Vector2(7, 7)
+position = Vector2(148, 281)
+scale = Vector2(8, 8)
 script = null
 
 [node name="Penguin" parent="CharacterSelect/CharButtons/CharButton7/Players" index="0"]
@@ -1061,6 +1071,9 @@ visible = false
 
 [node name="Hunter" parent="CharacterSelect/CharButtons/CharButton7/Players" index="1"]
 position = Vector2(-3.14286, -14.4286)
+
+[node name="Bobby" parent="CharacterSelect/CharButtons/CharButton7/Players" index="6"]
+visible = true
 
 [node name="Name" type="Label" parent="CharacterSelect/CharButtons/CharButton7"]
 layout_mode = 1
@@ -1078,7 +1091,7 @@ grow_vertical = 0
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_k61ug")
 theme_override_font_sizes/font_size = 35
-text = "?"
+text = "Bobby"
 horizontal_alignment = 1
 
 [node name="CharButton8" type="Button" parent="CharacterSelect/CharButtons"]
@@ -1106,6 +1119,9 @@ position = Vector2(-3.14286, -14.4286)
 [node name="Watch" parent="CharacterSelect/CharButtons/CharButton8/Players" index="2"]
 position = Vector2(0.5, -18)
 
+[node name="FaraOrst" parent="CharacterSelect/CharButtons/CharButton8/Players" index="7"]
+visible = true
+
 [node name="Name" type="Label" parent="CharacterSelect/CharButtons/CharButton8"]
 layout_mode = 1
 anchors_preset = 7
@@ -1122,7 +1138,7 @@ grow_vertical = 0
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_k61ug")
 theme_override_font_sizes/font_size = 35
-text = "?"
+text = "Fara & Orst"
 horizontal_alignment = 1
 
 [node name="CharButton9" type="Button" parent="CharacterSelect/CharButtons"]
@@ -1137,7 +1153,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/disabled = SubResource("StyleBoxFlat_cwqts")
 
 [node name="Players" parent="CharacterSelect/CharButtons/CharButton9" instance=ExtResource("16_kdgyt")]
-position = Vector2(146, 265)
+position = Vector2(145, 280)
 scale = Vector2(8, 8)
 script = null
 
@@ -1149,6 +1165,9 @@ position = Vector2(-3.14286, -14.4286)
 
 [node name="Watch" parent="CharacterSelect/CharButtons/CharButton9/Players" index="2"]
 position = Vector2(0.5, -18)
+
+[node name="Aria" parent="CharacterSelect/CharButtons/CharButton9/Players" index="8"]
+visible = true
 
 [node name="Name" type="Label" parent="CharacterSelect/CharButtons/CharButton9"]
 layout_mode = 1
@@ -1166,7 +1185,7 @@ grow_vertical = 0
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_k61ug")
 theme_override_font_sizes/font_size = 35
-text = "?"
+text = "Aria"
 horizontal_alignment = 1
 
 [node name="CharButton10" type="Button" parent="CharacterSelect/CharButtons"]
@@ -1181,7 +1200,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/disabled = SubResource("StyleBoxFlat_th2ad")
 
 [node name="Players" parent="CharacterSelect/CharButtons/CharButton10" instance=ExtResource("16_kdgyt")]
-position = Vector2(146, 265)
+position = Vector2(154, 247)
 scale = Vector2(8, 8)
 script = null
 
@@ -1193,6 +1212,9 @@ position = Vector2(-3.14286, -14.4286)
 
 [node name="Watch" parent="CharacterSelect/CharButtons/CharButton10/Players" index="2"]
 position = Vector2(0.5, -18)
+
+[node name="Peepers" parent="CharacterSelect/CharButtons/CharButton10/Players" index="9"]
+visible = true
 
 [node name="Name" type="Label" parent="CharacterSelect/CharButtons/CharButton10"]
 layout_mode = 1
@@ -1210,7 +1232,7 @@ grow_vertical = 0
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_k61ug")
 theme_override_font_sizes/font_size = 35
-text = "?"
+text = "Peepers"
 horizontal_alignment = 1
 
 [node name="Selector1" type="ColorRect" parent="CharacterSelect"]

@@ -82,7 +82,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r4mgk")
-chosen_minigame = 1
 
 [node name="AP" type="AnimationPlayer" parent="."]
 libraries = {
